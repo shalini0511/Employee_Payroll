@@ -9,3 +9,13 @@ select * from empoyee_payroll;
 ------- UC 5: Select Query using Cast() an GetDate() -------
 select salary from empoyee_payroll where name='Magesh';
 select salary from empoyee_payroll where startDate BETWEEN Cast('2020-12-20' as Date) and GetDate();
+------- UC 6: Add Gender Column and Update Table Values -------
+Alter table empoyee_payroll
+add Gender char(1);
+
+Update empoyee_payroll 
+set Gender='M'
+where name='Magesh';
+Update empoyee_payroll 
+set Gender='F'
+where name='Gayathri' or name='Shalini'or name='Aruna';
